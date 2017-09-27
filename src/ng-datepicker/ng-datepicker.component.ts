@@ -19,7 +19,7 @@ import {
   subDays,
   setDay,
 } from 'date-fns';
-import ru from 'date-fns/locale/ru';
+import * as ruLocale from 'date-fns/locale/ru/index.js';
 import { ISlimScrollOptions } from 'ngx-slimscroll';
 
 export interface DatepickerOptions {
@@ -170,8 +170,8 @@ export class NgDatepickerComponent implements OnInit, OnChanges {
       });
     }
 
-    this.displayValue = format(this.innerValue, this.displayFormat);
-    this.barTitle = format(start, this.barTitleFormat);
+    this.displayValue = format(this.innerValue, this.displayFormat, { locale: ruLocale });
+    this.barTitle = format(start, this.barTitleFormat, { locale: ruLocale });
   }
 
   initYears(): void {
@@ -186,7 +186,7 @@ export class NgDatepickerComponent implements OnInit, OnChanges {
     const start = this.firstCalendarDay;
     for (let i = start; i <= 6 + start; i++) {
       const date = setDay(new Date(), i);
-      this.dayNames.push(format(date, 'ddd'));
+      this.dayNames.push(format(date, 'ddd', { locale: ruLocale }));
     }
   }
 

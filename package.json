@@ -1,6 +1,6 @@
 {
   "name": "ng2-datepicker",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "main": "bundles/ng2-datepicker.umd.js",
   "module": "lib/index.js",
   "esnext": "lib/index.js",
