@@ -17,8 +17,9 @@ import {
   format,
   getDay,
   subDays,
-  setDay
+  setDay,
 } from 'date-fns';
+import ru from 'date-fns/locale/ru';
 import { ISlimScrollOptions } from 'ngx-slimscroll';
 
 export interface DatepickerOptions {
